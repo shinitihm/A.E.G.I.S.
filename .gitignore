@@ -26,7 +26,30 @@ replay_pid*
 # Enviroment
 local.properties
 .env
+.env
+.venv/
+venv/
 
 # pycache
-*.pyc
-pycache/
+__pycache__/
+.pytest_cache/
+
+# SELF-CHECKLIST-GUIDE
+COMO-RODAR.txt
+
+# ANDROID STUDIO
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
