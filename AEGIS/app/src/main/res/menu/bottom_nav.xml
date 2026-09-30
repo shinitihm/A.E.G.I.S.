@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_targets"
+        android:icon="@drawable/ic_nav_targets"
+        android:title="@string/nav_targets" />
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/ic_nav_search"
+        android:title="@string/nav_search" />
+    <item
+        android:id="@+id/nav_jarvis"
+        android:icon="@drawable/ic_nav_jarvis"
+        android:title="@string/nav_jarvis" />
+    <item
+        android:id="@+id/nav_arsenal"
+        android:icon="@drawable/ic_nav_arsenal"
+        android:title="@string/nav_arsenal" />
+    <item
+        android:id="@+id/nav_missions"
+        android:icon="@drawable/ic_nav_missions"
+        android:title="@string/nav_missions" />
+</menu>
