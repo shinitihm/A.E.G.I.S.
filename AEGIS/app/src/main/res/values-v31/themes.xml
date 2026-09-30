@@ -1,0 +1,7 @@
+<resources>
+    <!-- Splash nativa do Android 12+: fundo preto com o reator arc. Depois vem a SplashActivity animada. -->
+    <style name="Theme.AEGIS" parent="Base.Theme.AEGIS">
+        <item name="android:windowSplashScreenBackground">@color/aegis_bg</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+    </style>
+</resources>
