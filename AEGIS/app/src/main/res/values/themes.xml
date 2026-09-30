@@ -1,0 +1,116 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- O A.E.G.I.S. é sempre escuro: HUD holográfico sobre fundo preto. -->
+    <style name="Base.Theme.AEGIS" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/aegis_cyan</item>
+        <item name="colorOnPrimary">@color/aegis_bg</item>
+        <item name="colorSecondary">@color/aegis_gold</item>
+        <item name="colorOnSecondary">@color/aegis_bg</item>
+        <item name="colorError">@color/aegis_red</item>
+        <item name="android:colorBackground">@color/aegis_bg</item>
+        <item name="android:windowBackground">@color/aegis_bg</item>
+        <item name="colorSurface">@color/aegis_surface</item>
+        <item name="colorOnSurface">@color/aegis_text</item>
+        <item name="colorOnSurfaceVariant">@color/aegis_text_dim</item>
+        <item name="android:textColorPrimary">@color/aegis_text</item>
+        <item name="android:textColorSecondary">@color/aegis_text_dim</item>
+        <item name="android:fontFamily">@font/rajdhani_medium</item>
+        <item name="fontFamily">@font/rajdhani_medium</item>
+    </style>
+
+    <style name="Theme.AEGIS" parent="Base.Theme.AEGIS" />
+
+    <!-- ── Textos ── -->
+    <style name="Aegis.Title" parent="">
+        <item name="android:fontFamily">@font/orbitron</item>
+        <item name="android:textColor">@color/aegis_cyan</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0.12</item>
+    </style>
+
+    <style name="Aegis.Heading" parent="">
+        <item name="android:fontFamily">@font/orbitron</item>
+        <item name="android:textColor">@color/aegis_text</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.06</item>
+    </style>
+
+    <style name="Aegis.Label" parent="">
+        <item name="android:fontFamily">@font/share_tech_mono</item>
+        <item name="android:textColor">@color/aegis_text_dim</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Aegis.Section" parent="Aegis.Label">
+        <item name="android:textColor">@color/aegis_cyan</item>
+    </style>
+
+    <style name="Aegis.Mono" parent="">
+        <item name="android:fontFamily">@font/share_tech_mono</item>
+        <item name="android:textColor">@color/aegis_text</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="Aegis.Body" parent="">
+        <item name="android:fontFamily">@font/rajdhani_medium</item>
+        <item name="android:textColor">@color/aegis_text</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <!-- ── Componentes ── -->
+    <style name="Aegis.Button" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:fontFamily">@font/orbitron</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textColor">@color/aegis_cyan</item>
+        <item name="strokeColor">@color/aegis_cyan</item>
+        <item name="cornerRadius">2dp</item>
+        <item name="rippleColor">@color/aegis_cyan_dim</item>
+    </style>
+
+    <style name="Aegis.Button.Gold">
+        <item name="android:textColor">@color/aegis_gold</item>
+        <item name="strokeColor">@color/aegis_gold</item>
+    </style>
+
+    <style name="Aegis.Card" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardBackgroundColor">@color/aegis_surface</item>
+        <item name="strokeColor">@color/aegis_cyan_dim</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cardCornerRadius">4dp</item>
+    </style>
+
+    <style name="Aegis.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="android:fontFamily">@font/share_tech_mono</item>
+        <item name="android:textColor">@color/chip_text</item>
+        <item name="chipBackgroundColor">@color/chip_bg</item>
+        <item name="chipStrokeColor">@color/aegis_cyan_dim</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="checkedIconVisible">false</item>
+    </style>
+
+    <style name="Aegis.Chip.Info" parent="Widget.Material3.Chip.Assist">
+        <item name="android:fontFamily">@font/share_tech_mono</item>
+        <item name="android:textColor">@color/aegis_text</item>
+        <item name="chipBackgroundColor">@color/aegis_surface_2</item>
+        <item name="chipStrokeColor">@color/aegis_cyan_dim</item>
+        <item name="chipStrokeWidth">1dp</item>
+    </style>
+
+    <style name="Aegis.Input" parent="">
+        <item name="android:background">@drawable/bg_input</item>
+        <item name="android:fontFamily">@font/share_tech_mono</item>
+        <item name="android:textColor">@color/aegis_text</item>
+        <item name="android:textColorHint">@color/aegis_text_dim</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="Aegis.NavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/aegis_cyan_dim</item>
+    </style>
+</resources>

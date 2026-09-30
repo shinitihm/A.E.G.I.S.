@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">A.E.G.I.S.</string>
+    <string name="app_full_name">ADVANCED ENHANCED GUARDIAN\nINTELLIGENCE SYSTEM</string>
+
+    <!-- Autenticação -->
+    <string name="auth_title">IDENTIFICAÇÃO BIOMÉTRICA</string>
+    <string name="auth_subtitle">Acesso restrito — Stark Industries</string>
+    <string name="auth_idle">POSICIONE O DEDO NO SENSOR</string>
+    <string name="auth_scanning">ESCANEANDO…</string>
+    <string name="auth_success">IDENTIDADE CONFIRMADA\nBEM-VINDO, SR. STARK</string>
+    <string name="auth_failed">DIGITAL NÃO RECONHECIDA</string>
+    <string name="auth_denied">ACESSO NEGADO</string>
+    <string name="auth_cancelled">ESCANEAMENTO CANCELADO</string>
+    <string name="auth_unavailable">NENHUMA BIOMETRIA CADASTRADA NESTE APARELHO</string>
+    <string name="auth_retry">ESCANEAR NOVAMENTE</string>
+    <string name="auth_emergency">ACESSO DE EMERGÊNCIA</string>
+    <string name="auth_prompt_title">A.E.G.I.S.</string>
+    <string name="auth_prompt_subtitle">Confirme sua identidade, Sr. Stark</string>
+
+    <!-- Navegação -->
+    <string name="nav_targets">ALVOS</string>
+    <string name="nav_search">BUSCA</string>
+    <string name="nav_jarvis">J.A.R.V.I.S.</string>
+    <string name="nav_arsenal">ARSENAL</string>
+    <string name="nav_missions">MISSÕES</string>
+    <string name="status_online">● SISTEMA ONLINE</string>
+
+    <!-- Alvos -->
+    <string name="heroes_title">BANCO DE DADOS</string>
+    <string name="heroes_subtitle">Alvos catalogados pela Comic Vine</string>
+    <string name="target_of_day">ALVO DO DIA</string>
+    <string name="compare">COMPARAR</string>
+    <string name="filter_all">TODOS</string>
+    <string name="filter_scanned">ESCANEADOS</string>
+    <string name="filter_monitored">MONITORADOS</string>
+    <string name="filter_omega">ÔMEGA</string>
+    <string name="not_scanned">NÃO ESCANEADO</string>
+    <string name="empty_filter">NENHUM ALVO NESTE FILTRO</string>
+    <string name="tap_retry">Toque para tentar novamente</string>
+    <string name="loading_targets">SINCRONIZANDO BANCO DE DADOS…</string>
+
+    <!-- Ficha -->
+    <string name="scanning_target">ESCANEANDO ALVO…</string>
+    <string name="appearances">APARIÇÕES</string>
+    <string name="teams">TIMES</string>
+    <string name="first_appearance">1ª APARIÇÃO</string>
+    <string name="threat_level">NÍVEL DE AMEAÇA</string>
+    <string name="about">SOBRE</string>
+    <string name="powers">PODERES</string>
+    <string name="enemies">INIMIGOS</string>
+    <string name="allies">ALIADOS</string>
+    <string name="monitor">MONITORAR</string>
+    <string name="monitoring">MONITORANDO ✓</string>
+    <string name="ask_jarvis">PERGUNTAR À J.A.R.V.I.S.</string>
+    <string name="none_registered">Nenhum registro.</string>
+
+    <!-- Busca -->
+    <string name="search_title">RASTREAR NOVO ALVO</string>
+    <string name="search_hint">Nome em inglês (ex.: Wolverine)</string>
+    <string name="search_idle">Digite pelo menos 2 letras para iniciar o rastreamento.</string>
+    <string name="search_tracking">RASTREANDO…</string>
+    <string name="search_empty">NENHUM ALVO ENCONTRADO</string>
+
+    <!-- J.A.R.V.I.S. -->
+    <string name="jarvis_hint">Fale com a J.A.R.V.I.S.…</string>
+    <string name="jarvis_thinking">PROCESSANDO…</string>
+    <string name="jarvis_welcome">Bom dia, senhor. Todos os sistemas do A.E.G.I.S. estão operacionais. Em que posso ajudar?</string>
+    <string name="jarvis_offline_error">Perdi a conexão com o servidor, senhor. Verifique se o backend está rodando.</string>
+    <string name="jarvis_clear">LIMPAR</string>
+    <string name="jarvis_voice">Falar com a J.A.R.V.I.S.</string>
+    <string name="send">Enviar</string>
+    <string name="toggle_voice">Ligar ou desligar a voz</string>
+    <string name="no_speech">Reconhecimento de voz indisponível neste aparelho</string>
+
+    <!-- Arsenal -->
+    <string name="arsenal_title">HALL OF ARMOR</string>
+    <string name="arsenal_subtitle">Armaduras do Homem de Ferro</string>
+    <string name="house_party">PROTOCOLO HOUSE PARTY</string>
+    <string name="house_party_done">TODAS AS ARMADURAS ONLINE, SENHOR.</string>
+    <string name="weapons">ARMAMENTOS</string>
+    <string name="specs">ESPECIFICAÇÕES</string>
+    <string name="deploy">DEPLOY</string>
+    <string name="deployed">DESPACHADA</string>
+
+    <!-- Missões -->
+    <string name="missions_title">ARQUIVOS DE MISSÃO</string>
+    <string name="missions_subtitle">Arcos de história monitorados</string>
+    <string name="missions_loading">DESCRIPTOGRAFANDO ARQUIVOS…\n(a primeira vez demora um pouco)</string>
+    <string name="issues">EDIÇÕES</string>
+
+    <!-- Comparador -->
+    <string name="compare_title">SIMULADOR DE COMBATE</string>
+    <string name="compare_a">ALVO A</string>
+    <string name="compare_b">ALVO B</string>
+    <string name="simulate">SIMULAR</string>
+    <string name="simulating">RODANDO 14.000.605 SIMULAÇÕES…</string>
+    <string name="versus">VS</string>
+    <string name="hear_verdict">OUVIR VEREDITO</string>
+
+    <!-- Widget -->
+    <string name="widget_description">Alvo do dia do A.E.G.I.S.</string>
+    <string name="widget_header">A.E.G.I.S. // ALVO DO DIA</string>
+    <string name="widget_loading">Escaneando…</string>
+
+    <string name="back">Voltar</string>
+    <string name="server_offline">SEM CONEXÃO COM O SERVIDOR A.E.G.I.S.</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- HUD Stark -->
+    <color name="aegis_bg">#FF05070D</color>
+    <color name="aegis_surface">#FF0B1220</color>
+    <color name="aegis_surface_2">#FF111A2E</color>
+    <color name="aegis_cyan">#FF00E5FF</color>
+    <color name="aegis_cyan_dim">#3300E5FF</color>
+    <color name="aegis_cyan_faint">#1400E5FF</color>
+    <color name="aegis_gold">#FFFFB300</color>
+    <color name="aegis_red">#FFFF1744</color>
+    <color name="aegis_text">#FFE0F7FA</color>
+    <color name="aegis_text_dim">#FF7FA3B0</color>
+
+    <!-- Níveis de ameaça -->
+    <color name="threat_low">#FF00E5FF</color>
+    <color name="threat_moderate">#FFFFD600</color>
+    <color name="threat_high">#FFFF9100</color>
+    <color name="threat_omega">#FFFF1744</color>
+</resources>
