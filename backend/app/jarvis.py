@@ -42,7 +42,7 @@ EASTER_EGGS: list[tuple[tuple[str, ...], str, str | None]] = [
     (("sexta-feira", "friday"),
      "A F.R.I.D.A.Y. ainda não foi instalada neste sistema, senhor. Por enquanto, sou tudo o que o senhor tem.", None),
     (("3000",),
-     "Eu também, senhor. Três mil.", None),
+     "Eu também, senhor. Amo-te Três mil.", None),
     (("you up", "ta acordado", "esta acordado"),
      "Para o senhor, sempre.", None),
     (("quem e voce", "quem e vc", "o que e jarvis"),
