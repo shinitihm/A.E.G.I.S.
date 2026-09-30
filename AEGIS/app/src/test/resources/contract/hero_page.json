@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Hulk",
+      "real_name": "Bruce Banner",
+      "deck": null,
+      "image_url": "http://img/hulk.jpg",
+      "thumb_url": "http://img/hulk_s.jpg",
+      "appearances": 3000,
+      "first_appearance": null,
+      "publisher": "Marvel",
+      "threat": {
+        "score": 77,
+        "level": "ALTO",
+        "level_code": "HIGH",
+        "factors": [
+          {
+            "label": "Poderes",
+            "points": 40,
+            "max": 40
+          },
+          {
+            "label": "Aparições",
+            "points": 25,
+            "max": 25
+          },
+          {
+            "label": "Inimigos",
+            "points": 10,
+            "max": 15
+          },
+          {
+            "label": "Times",
+            "points": 2,
+            "max": 10
+          },
+          {
+            "label": "Poder cósmico",
+            "points": 0,
+            "max": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "Thor",
+      "real_name": "Thor Odinson",
+      "deck": null,
+      "image_url": null,
+      "thumb_url": null,
+      "appearances": 2500,
+      "first_appearance": null,
+      "publisher": "Marvel",
+      "threat": null
+    }
+  ],
+  "next_page": null
+}

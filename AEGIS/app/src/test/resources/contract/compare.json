@@ -1,0 +1,146 @@
+{
+  "a": {
+    "id": 1,
+    "name": "Hulk",
+    "real_name": "Bruce Banner",
+    "deck": null,
+    "image_url": "http://img/hulk.jpg",
+    "thumb_url": "http://img/hulk_s.jpg",
+    "appearances": 3000,
+    "first_appearance": null,
+    "publisher": "Marvel",
+    "threat": {
+      "score": 77,
+      "level": "ALTO",
+      "level_code": "HIGH",
+      "factors": [
+        {
+          "label": "Poderes",
+          "points": 40,
+          "max": 40
+        },
+        {
+          "label": "Aparições",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Inimigos",
+          "points": 10,
+          "max": 15
+        },
+        {
+          "label": "Times",
+          "points": 2,
+          "max": 10
+        },
+        {
+          "label": "Poder cósmico",
+          "points": 0,
+          "max": 10
+        }
+      ]
+    },
+    "bio": "Gamma rage",
+    "aliases": [],
+    "origin": null,
+    "powers": [
+      "P0",
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6",
+      "P7",
+      "P8",
+      "P9",
+      "P10",
+      "P11"
+    ],
+    "teams": [
+      "Avengers"
+    ],
+    "enemies": [
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination",
+      "Abomination"
+    ],
+    "friends": [],
+    "site_url": null
+  },
+  "b": {
+    "id": 2,
+    "name": "Thor",
+    "real_name": "Thor Odinson",
+    "deck": null,
+    "image_url": null,
+    "thumb_url": null,
+    "appearances": 2500,
+    "first_appearance": null,
+    "publisher": "Marvel",
+    "threat": {
+      "score": 43,
+      "level": "MODERADO",
+      "level_code": "MODERATE",
+      "factors": [
+        {
+          "label": "Poderes",
+          "points": 8,
+          "max": 40
+        },
+        {
+          "label": "Aparições",
+          "points": 25,
+          "max": 25
+        },
+        {
+          "label": "Inimigos",
+          "points": 0,
+          "max": 15
+        },
+        {
+          "label": "Times",
+          "points": 0,
+          "max": 10
+        },
+        {
+          "label": "Poder cósmico",
+          "points": 10,
+          "max": 10
+        }
+      ]
+    },
+    "bio": null,
+    "aliases": [],
+    "origin": null,
+    "powers": [
+      "Weather Control",
+      "Cosmic Power"
+    ],
+    "teams": [],
+    "enemies": [],
+    "friends": [],
+    "site_url": null
+  },
+  "winner_id": 1,
+  "probability_a": 64,
+  "verdict": "Vantagem clara, senhor. Hulk vence em 64% das simulações. Ameaça ALTO contra MODERADO de Thor."
+}
