@@ -1,0 +1,447 @@
+[
+  {
+    "mark": 1,
+    "code": "MARK I",
+    "name": "Mark I",
+    "nickname": "A Armadura da Caverna",
+    "year": 2008,
+    "debut": "Homem de Ferro (2008)",
+    "armor_class": "Protótipo",
+    "status": "DESTRUÍDA",
+    "description": "Construída numa caverna no Afeganistão, com sucata de mísseis Stark, para escapar dos Dez Anéis. Pesada, lenta e movida pelo primeiro reator arc em miniatura.",
+    "weapons": [
+      "Lança-chamas nos braços",
+      "Mini-lançador de foguete",
+      "Blindagem de ferro bruto"
+    ],
+    "stats": {
+      "power": 25,
+      "armor": 40,
+      "speed": 10,
+      "flight": 10,
+      "tech": 15
+    },
+    "primary_color": "#78909C",
+    "secondary_color": "#37474F",
+    "image_url": null
+  },
+  {
+    "mark": 2,
+    "code": "MARK II",
+    "name": "Mark II",
+    "nickname": "O Protótipo Prateado",
+    "year": 2008,
+    "debut": "Homem de Ferro (2008)",
+    "armor_class": "Protótipo de voo",
+    "status": "CONVERTIDA",
+    "description": "Primeira armadura com voo estável. Congelava em alta altitude — falha corrigida na Mark III. Mais tarde foi entregue a Rhodey e virou a Máquina de Combate.",
+    "weapons": [
+      "Repulsores (protótipo)",
+      "Estabilizadores de voo"
+    ],
+    "stats": {
+      "power": 35,
+      "armor": 45,
+      "speed": 55,
+      "flight": 60,
+      "tech": 40
+    },
+    "primary_color": "#B0BEC5",
+    "secondary_color": "#546E7A",
+    "image_url": null
+  },
+  {
+    "mark": 3,
+    "code": "MARK III",
+    "name": "Mark III",
+    "nickname": "A Clássica",
+    "year": 2008,
+    "debut": "Homem de Ferro (2008)",
+    "armor_class": "Combate",
+    "status": "ARQUIVADA",
+    "description": "A primeira vermelha e dourada. A liga de ouro-titânio resolveu o congelamento em altitude. Enfrentou o Monge de Ferro no topo das Indústrias Stark.",
+    "weapons": [
+      "Repulsores",
+      "Unirraio",
+      "Foguete antitanque no antebraço",
+      "Sinalizadores"
+    ],
+    "stats": {
+      "power": 55,
+      "armor": 60,
+      "speed": 65,
+      "flight": 70,
+      "tech": 50
+    },
+    "primary_color": "#B71C1C",
+    "secondary_color": "#FFB300",
+    "image_url": null
+  },
+  {
+    "mark": 5,
+    "code": "MARK V",
+    "name": "Mark V",
+    "nickname": "A Maleta",
+    "year": 2010,
+    "debut": "Homem de Ferro 2 (2010)",
+    "armor_class": "Portátil",
+    "status": "ARQUIVADA",
+    "description": "Cabe dentro de uma maleta e se monta no corpo em segundos. Usada às pressas contra o Chicote Negro no Grand Prix de Mônaco.",
+    "weapons": [
+      "Repulsores",
+      "Unirraio"
+    ],
+    "stats": {
+      "power": 45,
+      "armor": 35,
+      "speed": 50,
+      "flight": 20,
+      "tech": 70
+    },
+    "primary_color": "#C62828",
+    "secondary_color": "#BDBDBD",
+    "image_url": null
+  },
+  {
+    "mark": 6,
+    "code": "MARK VI",
+    "name": "Mark VI",
+    "nickname": "Novo Elemento",
+    "year": 2010,
+    "debut": "Homem de Ferro 2 (2010)",
+    "armor_class": "Combate",
+    "status": "ARQUIVADA",
+    "description": "Primeira armadura com o reator triangular do novo elemento criado por Tony. O laser de antebraço fatiou os drones Hammer na Expo Stark.",
+    "weapons": [
+      "Repulsores",
+      "Unirraio",
+      "Laser de antebraço",
+      "Micro-mísseis"
+    ],
+    "stats": {
+      "power": 65,
+      "armor": 65,
+      "speed": 70,
+      "flight": 75,
+      "tech": 65
+    },
+    "primary_color": "#B71C1C",
+    "secondary_color": "#FFB300",
+    "image_url": null
+  },
+  {
+    "mark": 7,
+    "code": "MARK VII",
+    "name": "Mark VII",
+    "nickname": "Implantação Rápida",
+    "year": 2012,
+    "debut": "Os Vingadores (2012)",
+    "armor_class": "Combate",
+    "status": "ARQUIVADA",
+    "description": "Lançada da Torre Stark e montada em Tony durante a queda. Carregou o míssil nuclear pelo portal Chitauri sobre Nova York.",
+    "weapons": [
+      "Repulsores",
+      "Unirraio",
+      "Micro-mísseis nos ombros",
+      "Laser de antebraço"
+    ],
+    "stats": {
+      "power": 72,
+      "armor": 70,
+      "speed": 75,
+      "flight": 80,
+      "tech": 70
+    },
+    "primary_color": "#B71C1C",
+    "secondary_color": "#FFB300",
+    "image_url": null
+  },
+  {
+    "mark": 16,
+    "code": "MARK XVI",
+    "name": "Mark XVI",
+    "nickname": "Nightclub",
+    "year": 2013,
+    "debut": "Homem de Ferro 3 (2013)",
+    "armor_class": "Furtiva",
+    "status": "DESTRUÍDA",
+    "description": "Armadura preta de infiltração. Chegou ao porto com o Protocolo House Party e foi destruída no Protocolo Clean Slate.",
+    "weapons": [
+      "Repulsores",
+      "Revestimento furtivo"
+    ],
+    "stats": {
+      "power": 50,
+      "armor": 45,
+      "speed": 80,
+      "flight": 75,
+      "tech": 75
+    },
+    "primary_color": "#212121",
+    "secondary_color": "#616161",
+    "image_url": null
+  },
+  {
+    "mark": 33,
+    "code": "MARK XXXIII",
+    "name": "Mark XXXIII",
+    "nickname": "Silver Centurion",
+    "year": 2013,
+    "debut": "Homem de Ferro 3 (2013)",
+    "armor_class": "Combate avançado",
+    "status": "DESTRUÍDA",
+    "description": "Homenagem à armadura clássica dos quadrinhos. Uma das estrelas do Protocolo House Party.",
+    "weapons": [
+      "Repulsores",
+      "Unirraio",
+      "Blindagem reforçada"
+    ],
+    "stats": {
+      "power": 75,
+      "armor": 75,
+      "speed": 70,
+      "flight": 75,
+      "tech": 70
+    },
+    "primary_color": "#C62828",
+    "secondary_color": "#CFD8DC",
+    "image_url": null
+  },
+  {
+    "mark": 38,
+    "code": "MARK XXXVIII",
+    "name": "Mark XXXVIII",
+    "nickname": "Igor",
+    "year": 2013,
+    "debut": "Homem de Ferro 3 (2013)",
+    "armor_class": "Carga pesada",
+    "status": "DESTRUÍDA",
+    "description": "Feita para levantar peso, não para voar bonito. Segurou estruturas inteiras durante a batalha no porto.",
+    "weapons": [
+      "Força hidráulica extrema",
+      "Blindagem pesada"
+    ],
+    "stats": {
+      "power": 85,
+      "armor": 85,
+      "speed": 25,
+      "flight": 30,
+      "tech": 55
+    },
+    "primary_color": "#FFB300",
+    "secondary_color": "#455A64",
+    "image_url": null
+  },
+  {
+    "mark": 42,
+    "code": "MARK XLII",
+    "name": "Mark XLII",
+    "nickname": "A Autônoma",
+    "year": 2013,
+    "debut": "Homem de Ferro 3 (2013)",
+    "armor_class": "Autônoma modular",
+    "status": "DESTRUÍDA",
+    "description": "Cada peça voa sozinha até Tony e se acopla. Pode lutar vazia, controlada remotamente pela J.A.R.V.I.S.",
+    "weapons": [
+      "Repulsores",
+      "Unirraio",
+      "Peças autopropulsadas"
+    ],
+    "stats": {
+      "power": 65,
+      "armor": 50,
+      "speed": 85,
+      "flight": 80,
+      "tech": 90
+    },
+    "primary_color": "#B71C1C",
+    "secondary_color": "#FFB300",
+    "image_url": null
+  },
+  {
+    "mark": 44,
+    "code": "MARK XLIV",
+    "name": "Mark XLIV",
+    "nickname": "Hulkbuster (Veronica)",
+    "year": 2015,
+    "debut": "Vingadores: Era de Ultron (2015)",
+    "armor_class": "Contenção pesada",
+    "status": "ARQUIVADA",
+    "description": "Sistema modular enviado por satélite — o codinome é Veronica. Vestida por cima da Mark XLIII para conter o Hulk em Joanesburgo.",
+    "weapons": [
+      "Punhos hidráulicos",
+      "Repulsores reforçados",
+      "Módulos de reposição via satélite"
+    ],
+    "stats": {
+      "power": 97,
+      "armor": 95,
+      "speed": 30,
+      "flight": 35,
+      "tech": 75
+    },
+    "primary_color": "#B71C1C",
+    "secondary_color": "#FFB300",
+    "image_url": null
+  },
+  {
+    "mark": 45,
+    "code": "MARK XLV",
+    "name": "Mark XLV",
+    "nickname": "A Primeira da F.R.I.D.A.Y.",
+    "year": 2015,
+    "debut": "Vingadores: Era de Ultron (2015)",
+    "armor_class": "Combate",
+    "status": "ARQUIVADA",
+    "description": "Depois que a J.A.R.V.I.S. virou o Visão, esta foi a primeira armadura operada pela F.R.I.D.A.Y. Lutou em Sokovia.",
+    "weapons": [
+      "Repulsores",
+      "Unirraio",
+      "Micro-mísseis"
+    ],
+    "stats": {
+      "power": 80,
+      "armor": 78,
+      "speed": 82,
+      "flight": 85,
+      "tech": 80
+    },
+    "primary_color": "#B71C1C",
+    "secondary_color": "#FFB300",
+    "image_url": null
+  },
+  {
+    "mark": 46,
+    "code": "MARK XLVI",
+    "name": "Mark XLVI",
+    "nickname": "Guerra Civil",
+    "year": 2016,
+    "debut": "Capitão América: Guerra Civil (2016)",
+    "armor_class": "Combate",
+    "status": "DANIFICADA",
+    "description": "Primeiro capacete retrátil. Lutou no aeroporto de Leipzig e contra o Capitão e o Soldado Invernal na Sibéria.",
+    "weapons": [
+      "Repulsores",
+      "Unirraio",
+      "Micro-mísseis",
+      "Análise de combate em tempo real"
+    ],
+    "stats": {
+      "power": 82,
+      "armor": 80,
+      "speed": 84,
+      "flight": 85,
+      "tech": 85
+    },
+    "primary_color": "#B71C1C",
+    "secondary_color": "#FFB300",
+    "image_url": null
+  },
+  {
+    "mark": 47,
+    "code": "MARK XLVII",
+    "name": "Mark XLVII",
+    "nickname": "Controle Remoto",
+    "year": 2017,
+    "debut": "Homem-Aranha: De Volta ao Lar (2017)",
+    "armor_class": "Controle remoto",
+    "status": "ARQUIVADA",
+    "description": "Pilotada de longe. Tony a usou para segurar a balsa de Staten Island e dar um sermão no Peter.",
+    "weapons": [
+      "Repulsores",
+      "Unirraio",
+      "Pilotagem remota"
+    ],
+    "stats": {
+      "power": 78,
+      "armor": 75,
+      "speed": 86,
+      "flight": 88,
+      "tech": 88
+    },
+    "primary_color": "#B71C1C",
+    "secondary_color": "#CFD8DC",
+    "image_url": null
+  },
+  {
+    "mark": 49,
+    "code": "MARK XLIX",
+    "name": "Mark XLIX",
+    "nickname": "Resgate",
+    "year": 2019,
+    "debut": "Vingadores: Ultimato (2019)",
+    "armor_class": "Nanotecnologia",
+    "status": "ATIVA",
+    "description": "Armadura feita para Pepper Potts. Lutou na batalha final contra o exército de Thanos.",
+    "weapons": [
+      "Repulsores",
+      "Drones de apoio",
+      "Canhões de ombro"
+    ],
+    "stats": {
+      "power": 85,
+      "armor": 82,
+      "speed": 88,
+      "flight": 90,
+      "tech": 92
+    },
+    "primary_color": "#1565C0",
+    "secondary_color": "#B0BEC5",
+    "image_url": null
+  },
+  {
+    "mark": 50,
+    "code": "MARK L",
+    "name": "Mark L",
+    "nickname": "Bleeding Edge",
+    "year": 2018,
+    "debut": "Vingadores: Guerra Infinita (2018)",
+    "armor_class": "Nanotecnologia",
+    "status": "DANIFICADA",
+    "description": "Fica guardada no reator do peito e forma qualquer arma sob demanda. Enfrentou Thanos em Titã e chegou a tirar sangue dele.",
+    "weapons": [
+      "Nanoarmas sob demanda",
+      "Canhão repulsor",
+      "Escudo",
+      "Lâminas",
+      "Propulsores extras"
+    ],
+    "stats": {
+      "power": 92,
+      "armor": 85,
+      "speed": 90,
+      "flight": 92,
+      "tech": 97
+    },
+    "primary_color": "#B71C1C",
+    "secondary_color": "#FFB300",
+    "image_url": null
+  },
+  {
+    "mark": 85,
+    "code": "MARK LXXXV",
+    "name": "Mark LXXXV",
+    "nickname": "A Última",
+    "year": 2019,
+    "debut": "Vingadores: Ultimato (2019)",
+    "armor_class": "Nanotecnologia",
+    "status": "LENDÁRIA",
+    "description": "A armadura final de Tony Stark. Com ela ele tomou as Joias do Infinito de Thanos e estalou os dedos: \"Eu sou o Homem de Ferro.\"",
+    "weapons": [
+      "Nanoarmas",
+      "Manopla nano das Joias do Infinito",
+      "Repulsores",
+      "Escudo de energia"
+    ],
+    "stats": {
+      "power": 99,
+      "armor": 90,
+      "speed": 90,
+      "flight": 92,
+      "tech": 100
+    },
+    "primary_color": "#8E0000",
+    "secondary_color": "#FFC107",
+    "image_url": null
+  }
+]
