@@ -6,9 +6,9 @@ Docs:   http://localhost:8000/docs
 
 from fastapi import FastAPI, Query
 
-from . import armors, comicvine, jarvis
+from . import armors, briefing, comicvine, jarvis
 from .config import settings
-from .models import Armor, ChatRequest, ChatResponse, CompareResult, HeroDetail, HeroPage, HeroSummary, Mission, MissionDetail
+from .models import Armor, Briefing, ChatRequest, ChatResponse, CompareResult, HeroDetail, HeroPage, HeroSummary, Mission, MissionDetail
 
 app = FastAPI(title="A.E.G.I.S. API", version="1.0")
 
@@ -60,6 +60,13 @@ async def compare(a: str, b: str):
         verdict = (f"{margin.capitalize()}, senhor. {w.name} vence em {p}% das simulações. "
                    f"Ameaça {w.threat.level} contra {l.threat.level} de {l.name}.")
     return CompareResult(a=hero_a, b=hero_b, winner_id=winner, probability_a=prob_a, verdict=verdict)
+
+
+# ── briefing (pop-up de boas-vindas) ──
+
+@app.get("/briefing", response_model=Briefing)
+async def daily_briefing(city: str = Query(..., min_length=2)):
+    return await briefing.build(city)
 
 
 # ── missões ──

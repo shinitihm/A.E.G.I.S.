@@ -55,8 +55,19 @@ def _norm(text: str) -> str:
     return "".join(c for c in text if not unicodedata.combining(c)).strip()
 
 
+# Troca de tema do app. A frase precisa ser a mensagem inteira: "sou victor hugo" não pode virar Dr. Doom.
+_DOOM = re.compile(r"(?:eu\s+)?sou\s+(?:o\s+)?(?:victor(?:\s+von\s+doom)?|doutor\s+destino|doctor\s+doom|dr\.?\s*doom)[\s.!]*")
+_STARK = re.compile(r"(?:eu\s+)?sou\s+(?:o\s+)?tony(?:\s+stark)?[\s.!]*")
+DOOM_REPLY = "Identidade reconhecida: Victor von Doom. Reconfigurando o A.E.G.I.S. para o seu comando, Majestade."
+STARK_REPLY = "Bem-vindo de volta, senhor. Restaurando a interface Stark."
+
+
 def easter_egg(message: str) -> ChatResponse | None:
     msg = _norm(message)
+    if _DOOM.fullmatch(msg):
+        return ChatResponse(reply=DOOM_REPLY, action="DOOM_MODE", mode="OFFLINE")
+    if _STARK.fullmatch(msg):
+        return ChatResponse(reply=STARK_REPLY, action="STARK_MODE", mode="OFFLINE")
     for triggers, reply, action in EASTER_EGGS:
         if any(t in msg for t in triggers):
             return ChatResponse(reply=reply, action=action, mode="OFFLINE")
