@@ -56,6 +56,10 @@ app/src/main/java/com/example/aegis/
 | **Voz** | 🔊 liga/desliga a resposta falada (TextToSpeech); 🎤 fala a pergunta (reconhecimento de voz do Google) |
 | **Widget** | segure na tela inicial → Widgets → A.E.G.I.S. (toque abre o app pela splash, então a biometria continua obrigatória) |
 | **Easter eggs** | no chat: `I am Iron Man`, `Veronica`, `Clean Slate`, `3000`, `sexta-feira`… |
+| **Briefing** | pop-up ao abrir o app (clima, última chuva e 2 manchetes): `BriefingDialogFragment` → `GET /briefing` |
+| **Modo Dr. Doom** | diga `Sou Victor.` à J.A.R.V.I.S. (volta com `Sou Tony Stark.`): backend `jarvis.py` (`DOOM_MODE`); app `ThemeMode`, `AegisApp`, `res/values-night/` |
+
+> **Cores:** nunca escreva hex de cor em Java/layout/drawable — use `@color/aegis_*`. O tema Dr. Doom troca os valores em `res/values-night/colors.xml`, e o teste `NoHardcodedStarkColorsTest` barra hex solto.
 
 ## Testes
 
