@@ -1,6 +1,7 @@
 package com.example.aegis.data;
 
 import com.example.aegis.data.model.Armor;
+import com.example.aegis.data.model.Briefing;
 import com.example.aegis.data.model.ChatRequest;
 import com.example.aegis.data.model.ChatResponse;
 import com.example.aegis.data.model.CompareResult;
@@ -24,6 +25,9 @@ public interface AegisApi {
 
     @GET("health")
     Call<Health> health();
+
+    @GET("briefing")
+    Call<Briefing> briefing(@Query("city") String city);
 
     @GET("heroes")
     Call<HeroPage> heroes(@Query("page") int page);
