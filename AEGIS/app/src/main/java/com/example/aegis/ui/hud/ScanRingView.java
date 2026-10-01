@@ -10,6 +10,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
+import androidx.core.content.ContextCompat;
+
+import com.example.aegis.R;
+
 /** Anéis girando: usado no scanner de digital, na busca e nos carregamentos. */
 public class ScanRingView extends View {
 
@@ -36,7 +40,7 @@ public class ScanRingView extends View {
         arcInner.setStyle(Paint.Style.STROKE);
         arcInner.setStrokeWidth(Hud.dp(context, 2));
         arcInner.setStrokeCap(Paint.Cap.ROUND);
-        setColor(0xFF00E5FF);
+        setColor(ContextCompat.getColor(context, R.color.aegis_cyan));
     }
 
     public void setColor(int color) {
