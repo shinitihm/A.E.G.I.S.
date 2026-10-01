@@ -54,6 +54,7 @@ Documentação interativa: <http://localhost:8000/docs>
 | GET | `/missions` · `/missions/{id}` | Arcos de história (Guerra Civil, Guerra Infinita…) |
 | GET | `/armors` · `/armors/{mark}` | Arsenal do Homem de Ferro |
 | POST | `/jarvis/chat` | Conversa com a J.A.R.V.I.S. |
+| GET | `/briefing?city=Campinas` | Temperatura + última chuva da cidade e 2 manchetes (Open-Meteo + RSS, sem chave; o servidor precisa de internet) |
 
 Erros vêm como `{"detail": "mensagem"}` e o app mostra a mensagem na tela.
 
@@ -77,11 +78,11 @@ Os pesos são fáceis de ajustar no arquivo. Teste com Thanos, Hulk, Wolverine e
 
 Ordem de decisão em `POST /jarvis/chat`:
 
-1. **Easter eggs** (sempre, mesmo com IA): `I am Iron Man`, `House Party`, `Clean Slate`, `Veronica`, `3000`…
+1. **Easter eggs** (sempre, mesmo com IA): `I am Iron Man`, `House Party`, `Clean Slate`, `Veronica`, `3000`… e a troca de tema: `Sou Victor.` (modo Dr. Doom) e `Sou Tony Stark.` (volta ao normal).
 2. **Modo IA** (se `GEMINI_API_KEY` existir): Gemini com 3 ferramentas — `buscar_heroi`, `listar_armaduras`, `consultar_armadura` — então responde com dados reais. Se a chamada falhar, cai no passo 3.
 3. **Modo OFFLINE**: regras por palavra-chave (`quem é o Thanos`, `mark 44`, `hulk vs thor`, `status do arsenal`…).
 
-A resposta traz `action` quando o app deve fazer algo: `HOUSE_PARTY`, `IRON_MAN`, `CLEAN_SLATE`, `OPEN_ARMOR:44`, `OPEN_HERO:1455`, `COMPARE:hulk|thor`.
+A resposta traz `action` quando o app deve fazer algo: `HOUSE_PARTY`, `IRON_MAN`, `CLEAN_SLATE`, `DOOM_MODE`, `STARK_MODE`, `OPEN_ARMOR:44`, `OPEN_HERO:1455`, `COMPARE:hulk|thor`.
 
 ## Testes
 
