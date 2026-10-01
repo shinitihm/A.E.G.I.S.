@@ -8,6 +8,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
+import androidx.core.content.ContextCompat;
+
+import com.example.aegis.R;
+
 /** Onda de áudio animada: aparece quando a J.A.R.V.I.S. está pensando ou falando. */
 public class WaveView extends View {
 
@@ -22,7 +26,7 @@ public class WaveView extends View {
 
     public WaveView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        paint.setColor(0xFF00E5FF);
+        paint.setColor(ContextCompat.getColor(context, R.color.aegis_cyan));
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeWidth(Hud.dp(context, 3));
     }
