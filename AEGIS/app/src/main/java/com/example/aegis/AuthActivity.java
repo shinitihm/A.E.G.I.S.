@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.biometric.BiometricManager;
 import androidx.biometric.BiometricPrompt;
 import androidx.core.content.ContextCompat;
+import androidx.core.graphics.ColorUtils;
 
 import com.example.aegis.ui.hud.Hud;
 import com.example.aegis.ui.hud.ScanRingView;
@@ -161,7 +162,7 @@ public class AuthActivity extends AppCompatActivity {
         emergency.setVisibility(View.GONE);
         Hud.vibrate(this, 120);
         Hud.typewriter(status, getString(R.string.auth_success));
-        Hud.flash(flash, 0x3300E5FF);
+        Hud.flash(flash, ColorUtils.setAlphaComponent(cyan, 0x33));
         handler.postDelayed(() -> {
             startActivity(new Intent(this, MainActivity.class));
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
