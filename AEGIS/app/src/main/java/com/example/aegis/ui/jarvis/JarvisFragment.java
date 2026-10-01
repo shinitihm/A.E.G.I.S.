@@ -3,6 +3,8 @@ package com.example.aegis.ui.jarvis;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.speech.RecognizerIntent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aegis.MainActivity;
 import com.example.aegis.R;
+import com.example.aegis.ThemeMode;
 import com.example.aegis.data.ApiCallback;
 import com.example.aegis.data.ApiClient;
 import com.example.aegis.data.LocalStore;
@@ -229,6 +232,10 @@ public class JarvisFragment extends Fragment {
         } else if ("CLEAN_SLATE".equals(action)) {
             Hud.flash(main.flashOverlay(), 0x99FFFFFF);
             Hud.vibrate(main, 500);
+        } else if ("DOOM_MODE".equals(action)) {
+            switchTheme(main, true);
+        } else if ("STARK_MODE".equals(action)) {
+            switchTheme(main, false);
         } else if (action.startsWith("OPEN_ARMOR:")) {
             startActivity(ArmorDetailActivity.intent(requireContext(), parseInt(action)));
         } else if (action.startsWith("OPEN_HERO:")) {
@@ -237,6 +244,20 @@ public class JarvisFragment extends Fragment {
             String[] names = action.substring("COMPARE:".length()).split("\\|");
             if (names.length == 2) startActivity(CompareActivity.intent(requireContext(), names[0], names[1]));
         }
+    }
+
+    /**
+     * Troca o tema depois de a J.A.R.V.I.S. responder. A troca recria as telas; o chat não se perde porque
+     * reply() já o salvou no LocalStore antes desta ação.
+     */
+    private void switchTheme(MainActivity main, boolean doom) {
+        if (store.doomMode() == doom) return; // já está nesse tema: não recria as telas à toa
+        store.setDoomMode(doom);
+        Hud.flash(main.flashOverlay(), doom ? ThemeMode.FLASH_DOOM : ThemeMode.FLASH_STARK);
+        Hud.vibrate(main, 250);
+        long wait = store.voiceEnabled() ? 3500 : 1500; // deixa a resposta ser falada/lida antes de recriar
+        // Handler do Looper principal, não da view: a troca acontece mesmo se o usuário sair da tela nesse intervalo
+        new Handler(Looper.getMainLooper()).postDelayed(() -> ThemeMode.apply(doom), wait);
     }
 
     private static int parseInt(String action) {
@@ -262,7 +283,8 @@ public class JarvisFragment extends Fragment {
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        if (hidden) speaker.stop(); // não continua falando depois que o usuário sai da aba
+        // pode chegar antes do onViewCreated (a MainActivity adiciona e esconde as abas no onCreate): speaker ainda é null
+        if (hidden && speaker != null) speaker.stop(); // não continua falando depois que o usuário sai da aba
     }
 
     @Override
