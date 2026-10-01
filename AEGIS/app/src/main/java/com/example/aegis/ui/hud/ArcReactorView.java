@@ -3,6 +3,7 @@ package com.example.aegis.ui.hud;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RadialGradient;
@@ -11,6 +12,11 @@ import android.graphics.Shader;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.ColorUtils;
+
+import com.example.aegis.R;
 
 /** O reator arc do peito do Tony, girando e pulsando. */
 public class ArcReactorView extends View {
@@ -22,6 +28,8 @@ public class ArcReactorView extends View {
     private final Paint core = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final RectF oval = new RectF();
     private final Path trianglePath = new Path();
+    private final int accent;
+    private final int light;
     private float rotation;
     private float pulse = 1f;
     private ValueAnimator animator;
@@ -32,13 +40,15 @@ public class ArcReactorView extends View {
 
     public ArcReactorView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        accent = ContextCompat.getColor(context, R.color.aegis_cyan);
+        light = ContextCompat.getColor(context, R.color.aegis_cyan_light);
         ring.setStyle(Paint.Style.STROKE);
-        ring.setColor(0xFF00E5FF);
+        ring.setColor(accent);
         segment.setStyle(Paint.Style.STROKE);
-        segment.setColor(0xCC00E5FF);
+        segment.setColor(ColorUtils.setAlphaComponent(accent, 0xCC));
         segment.setStrokeCap(Paint.Cap.BUTT);
         triangle.setStyle(Paint.Style.STROKE);
-        triangle.setColor(0xFFB2FFFF);
+        triangle.setColor(light);
         triangle.setStrokeJoin(Paint.Join.ROUND);
     }
 
@@ -47,9 +57,12 @@ public class ArcReactorView extends View {
         float r = Math.min(w, h) / 2f;
         float cx = w / 2f;
         float cy = h / 2f;
-        glow.setShader(new RadialGradient(cx, cy, r, new int[]{0x6600E5FF, 0x2200E5FF, 0x0000E5FF},
+        glow.setShader(new RadialGradient(cx, cy, r,
+                new int[]{ColorUtils.setAlphaComponent(accent, 0x66), ColorUtils.setAlphaComponent(accent, 0x22),
+                        ColorUtils.setAlphaComponent(accent, 0x00)},
                 new float[]{0f, 0.6f, 1f}, Shader.TileMode.CLAMP));
-        core.setShader(new RadialGradient(cx, cy, r * 0.3f, new int[]{0xFFFFFFFF, 0xFFB2FFFF, 0x0000E5FF},
+        core.setShader(new RadialGradient(cx, cy, r * 0.3f,
+                new int[]{Color.WHITE, light, ColorUtils.setAlphaComponent(accent, 0x00)},
                 new float[]{0f, 0.55f, 1f}, Shader.TileMode.CLAMP));
         ring.setStrokeWidth(r * 0.05f);
         segment.setStrokeWidth(r * 0.12f);
