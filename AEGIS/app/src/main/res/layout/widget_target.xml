@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/widget_header"
-        android:textColor="@color/aegis_gold"
+        android:textColor="@color/widget_gold"
         android:textSize="10sp"
         android:typeface="monospace" />
 
@@ -24,7 +24,7 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:text="@string/widget_loading"
-        android:textColor="@color/aegis_text"
+        android:textColor="@color/widget_text"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:textColor="@color/aegis_cyan"
+        android:textColor="@color/widget_cyan"
         android:textSize="13sp"
         android:typeface="monospace" />
 </LinearLayout>
