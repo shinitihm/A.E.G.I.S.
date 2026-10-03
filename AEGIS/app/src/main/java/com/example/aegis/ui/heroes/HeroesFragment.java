@@ -42,6 +42,7 @@ public class HeroesFragment extends Fragment {
     private StateView state;
     private ChipGroup filters;
     private View dayCard;
+    private RecyclerView list;
     private boolean loading;
     private Integer nextPage = 0;
 
@@ -59,7 +60,7 @@ public class HeroesFragment extends Fragment {
         dayCard = view.findViewById(R.id.dayCard);
 
         adapter = new HeroAdapter(hero -> startActivity(HeroDetailActivity.intent(requireContext(), hero.id)));
-        RecyclerView list = view.findViewById(R.id.list);
+        list = view.findViewById(R.id.list);
         LinearLayoutManager layout = new LinearLayoutManager(requireContext());
         list.setLayoutManager(layout);
         list.setAdapter(adapter);
@@ -82,6 +83,28 @@ public class HeroesFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if (adapter != null) applyFilter(); // pode ter escaneado ou monitorado alguém na ficha
+    }
+
+    /** Easter egg "snap": metade dos cards visíveis vira pó e volta sozinha alguns segundos depois. */
+    public void snap() {
+        if (list == null) return;
+        list.post(() -> { // post: a aba pode ter acabado de ser mostrada e ainda não ter os cards na tela
+            list.suppressLayout(true); // sem rolagem nem reciclagem enquanto há cards invisíveis
+            for (int i = 0; i < list.getChildCount(); i += 2) {
+                View card = list.getChildAt(i);
+                card.animate().alpha(0f).scaleX(0.7f).scaleY(0.7f)
+                        .translationX(card.getWidth() * 0.35f).translationY(-card.getHeight() * 0.4f)
+                        .setStartDelay(i * 70L).setDuration(900)
+                        .withEndAction(() -> card.animate().alpha(1f).scaleX(1f).scaleY(1f)
+                                .translationX(0f).translationY(0f)
+                                .setStartDelay(2500).setDuration(600)
+                                // o atraso fica guardado na view: zera para não atrasar as animações da lista
+                                .withEndAction(() -> card.animate().setStartDelay(0))
+                                .start())
+                        .start();
+            }
+            list.postDelayed(() -> list.suppressLayout(false), 5500);
+        });
     }
 
     private void loadNext() {
