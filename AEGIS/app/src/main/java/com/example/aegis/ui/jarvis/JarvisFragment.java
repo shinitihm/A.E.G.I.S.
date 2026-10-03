@@ -1,5 +1,6 @@
 package com.example.aegis.ui.jarvis;
 
+import android.animation.ObjectAnimator;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,6 +38,7 @@ import com.example.aegis.data.model.Health;
 import com.example.aegis.ui.arsenal.ArmorDetailActivity;
 import com.example.aegis.ui.heroes.CompareActivity;
 import com.example.aegis.ui.heroes.HeroDetailActivity;
+import com.example.aegis.ui.heroes.HeroesFragment;
 import com.example.aegis.ui.hud.Hud;
 import com.example.aegis.ui.hud.Speaker;
 import com.example.aegis.ui.hud.WaveView;
@@ -232,6 +234,17 @@ public class JarvisFragment extends Fragment {
         } else if ("CLEAN_SLATE".equals(action)) {
             Hud.flash(main.flashOverlay(), 0x99FFFFFF);
             Hud.vibrate(main, 500);
+        } else if ("SNAP".equals(action)) {
+            Hud.flash(main.flashOverlay(), 0x66B388FF);
+            Hud.vibrate(main, 300);
+            // espera a resposta ser falada/lida: trocar de aba esconde o chat e corta a voz
+            chat.postDelayed(() -> {
+                if (!isResumed()) return; // app foi para segundo plano: não troca de aba
+                main.showTab(R.id.nav_targets);
+                main.fragment("targets", HeroesFragment.class).snap();
+            }, store.voiceEnabled() ? 3500 : 1500);
+        } else if ("ULTRON".equals(action)) {
+            glitch(main);
         } else if ("DOOM_MODE".equals(action)) {
             switchTheme(main, true);
         } else if ("STARK_MODE".equals(action)) {
@@ -244,6 +257,18 @@ public class JarvisFragment extends Fragment {
             String[] names = action.substring("COMPARE:".length()).split("\\|");
             if (names.length == 2) startActivity(CompareActivity.intent(requireContext(), names[0], names[1]));
         }
+    }
+
+    /** Easter egg "Ultron": a tela treme em vermelho (invasão) e depois pisca em ciano (J.A.R.V.I.S. retoma). */
+    private void glitch(MainActivity main) {
+        View content = main.findViewById(android.R.id.content);
+        Hud.flash(main.flashOverlay(), 0x99FF1744);
+        Hud.vibrate(main, 600);
+        ObjectAnimator shake = ObjectAnimator.ofFloat(content, View.TRANSLATION_X, 0, -28, 22, -16, 30, -10, 14, 0);
+        shake.setDuration(400);
+        shake.setRepeatCount(2);
+        shake.start();
+        content.postDelayed(() -> Hud.flash(main.flashOverlay(), 0x6600E5FF), 1400);
     }
 
     /**
