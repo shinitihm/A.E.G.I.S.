@@ -8,6 +8,11 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.ColorUtils;
+
+import com.example.aegis.R;
+
 /** Barra segmentada de 0 a 100 que "enche" quando o alvo é escaneado. */
 public class ThreatMeterView extends View {
 
@@ -24,8 +29,9 @@ public class ThreatMeterView extends View {
     public ThreatMeterView(Context context, AttributeSet attrs) {
         super(context, attrs);
         gap = Hud.dp(context, 2);
-        off.setColor(0x2200E5FF);
-        on.setColor(0xFF00E5FF);
+        int accent = ContextCompat.getColor(context, R.color.aegis_cyan);
+        off.setColor(ColorUtils.setAlphaComponent(accent, 0x22));
+        on.setColor(accent);
     }
 
     public void setThreat(int score, int color, boolean animate) {

@@ -113,4 +113,12 @@
     <style name="Aegis.NavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/aegis_cyan_dim</item>
     </style>
+
+    <!-- Pop-up do briefing: janela transparente; o cartão (Aegis.Card) desenha o fundo. -->
+    <style name="Aegis.Dialog" parent="Theme.Material3.Dark.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+        <item name="android:backgroundDimAmount">0.75</item>
+    </style>
 </resources>

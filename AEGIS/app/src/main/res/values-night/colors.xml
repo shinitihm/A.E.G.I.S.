@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TEMA DR. DOOM. Este arquivo só vale quando o app liga o "modo noturno" (ThemeMode). Os NOMES são os mesmos do
+  tema Stark: aegis_cyan = cor de destaque principal (aqui, o verde do manto), aegis_gold = cor secundária
+  (aqui, o aço da armadura). Toda cor aegis_* de values/colors.xml precisa existir aqui (ColorPaletteParityTest).
+  As threat_* e widget_* ficam de fora de propósito: são iguais nos dois temas.
+-->
+<resources>
+    <color name="aegis_bg">#FF040906</color>
+    <color name="aegis_surface">#FF0A140E</color>
+    <color name="aegis_surface_2">#FF112019</color>
+    <color name="aegis_cyan">#FF00E676</color>
+    <color name="aegis_cyan_dim">#3300E676</color>
+    <color name="aegis_cyan_faint">#1400E676</color>
+    <color name="aegis_cyan_soft">#1A00E676</color>
+    <color name="aegis_cyan_mid">#6600E676</color>
+    <color name="aegis_cyan_light">#FFB9F6CA</color>
+    <color name="aegis_gold">#FFCFD8DC</color>
+    <color name="aegis_gold_faint">#26CFD8DC</color>
+    <color name="aegis_gold_mid">#80CFD8DC</color>
+    <color name="aegis_red">#FFFF1744</color>
+    <color name="aegis_text">#FFE8F5E9</color>
+    <color name="aegis_text_dim">#FF7FA38A</color>
+    <color name="aegis_bg_clear">#00040906</color>
+    <color name="aegis_bg_half">#40040906</color>
+</resources>

@@ -83,7 +83,7 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     reply: str
-    action: str | None = None  # HOUSE_PARTY, IRON_MAN, CLEAN_SLATE, OPEN_ARMOR:44, OPEN_HERO:1455
+    action: str | None = None  # HOUSE_PARTY, IRON_MAN, CLEAN_SLATE, DOOM_MODE, STARK_MODE, OPEN_ARMOR:44, OPEN_HERO:1455
     mode: Literal["IA", "OFFLINE"]
 
 
@@ -107,3 +107,29 @@ class Mission(BaseModel):
 class MissionDetail(Mission):
     description: str | None = None
     issues: list[str] = []
+
+
+class LastRain(BaseModel):
+    date: str  # AAAA-MM-DD, no fuso da cidade
+    days_ago: int  # 0 = hoje
+    mm: float
+
+
+class Weather(BaseModel):
+    temperature_c: float
+    last_rain: LastRain | None = None  # None = não choveu dentro da janela
+    window_days: int  # quantos dias para trás foram verificados
+
+
+class NewsItem(BaseModel):
+    title: str
+    source: str | None = None
+    url: str
+
+
+class Briefing(BaseModel):
+    city: str | None = None  # nome resolvido pelo geocoder, ex.: "Campinas, São Paulo"
+    weather: Weather | None = None
+    weather_error: str | None = None
+    news: list[NewsItem] = []
+    news_error: str | None = None

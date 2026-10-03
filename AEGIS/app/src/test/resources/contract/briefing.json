@@ -1,0 +1,26 @@
+{
+  "city": "Campinas, São Paulo",
+  "weather": {
+    "temperature_c": 27.4,
+    "last_rain": {
+      "date": "2026-09-27",
+      "days_ago": 3,
+      "mm": 5.2
+    },
+    "window_days": 30
+  },
+  "weather_error": null,
+  "news": [
+    {
+      "title": "Primeira manchete",
+      "source": "G1",
+      "url": "https://news.example/1"
+    },
+    {
+      "title": "Segunda manchete",
+      "source": "Folha",
+      "url": "https://news.example/2"
+    }
+  ],
+  "news_error": null
+}

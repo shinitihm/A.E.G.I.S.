@@ -7,6 +7,10 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
 
+import androidx.core.content.ContextCompat;
+
+import com.example.aegis.R;
+
 /** Gráfico radar de até 2 séries (usado nas armaduras e no comparador). */
 public class StatRadarView extends View {
 
@@ -19,8 +23,8 @@ public class StatRadarView extends View {
     private String[] labels = new String[0];
     private int[] seriesA = new int[0];
     private int[] seriesB;
-    private int colorA = 0xFF00E5FF;
-    private int colorB = 0xFFFFB300;
+    private int colorA;
+    private int colorB;
 
     public StatRadarView(Context context) {
         this(context, null);
@@ -28,13 +32,15 @@ public class StatRadarView extends View {
 
     public StatRadarView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        colorA = ContextCompat.getColor(context, R.color.aegis_cyan);
+        colorB = ContextCompat.getColor(context, R.color.aegis_gold);
         grid.setStyle(Paint.Style.STROKE);
-        grid.setColor(0x3300E5FF);
+        grid.setColor(ContextCompat.getColor(context, R.color.aegis_cyan_dim));
         grid.setStrokeWidth(Hud.dp(context, 1));
         stroke.setStyle(Paint.Style.STROKE);
         stroke.setStrokeWidth(Hud.dp(context, 2));
         stroke.setStrokeJoin(Paint.Join.ROUND);
-        text.setColor(0xFF7FA3B0);
+        text.setColor(ContextCompat.getColor(context, R.color.aegis_text_dim));
         text.setTextSize(Hud.dp(context, 10));
         text.setTextAlign(Paint.Align.CENTER);
     }

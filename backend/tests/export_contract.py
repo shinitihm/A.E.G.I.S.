@@ -1,7 +1,7 @@
 """Gera os JSONs de exemplo usados pelo teste de contrato do app Android.
 
 Rodar (dentro de backend/):  python -m tests.export_contract
-Saída: ../android/app/src/test/resources/contract/*.json
+Saída: ../AEGIS/app/src/test/resources/contract/*.json
 
 Se você mudar um modelo em app/models.py, rode de novo e o teste Java (ContractTest) acusa o que quebrou.
 """
@@ -11,11 +11,13 @@ from pathlib import Path
 
 from fastapi.testclient import TestClient
 
-from app import comicvine, jarvis
+from app import briefing, comicvine, jarvis
+from app.config import settings
 from app.main import app
 from tests.test_api import CHARACTERS, DETAILS
+from tests.test_briefing import Net
 
-OUT = Path(__file__).resolve().parents[2] / "android/app/src/test/resources/contract"
+OUT = Path(__file__).resolve().parents[2] / "AEGIS/app/src/test/resources/contract"  # pasta do projeto Android
 
 
 async def fake_get(path, **params):
@@ -29,7 +31,10 @@ async def fake_get(path, **params):
 
 def main():
     comicvine._get = fake_get
+    settings.comic_vine_api_key = ""  # o .env de quem roda não pode vazar para os JSONs (health.json)
+    settings.gemini_api_key = ""
     jarvis._gemini = None
+    briefing._get = Net().get  # clima e notícias de mentira, sem internet
     client = TestClient(app)
     OUT.mkdir(parents=True, exist_ok=True)
 
@@ -40,6 +45,7 @@ def main():
         "armors": client.get("/armors"),
         "chat_action": client.post("/jarvis/chat", json={"message": "quem é o Hulk?"}),
         "health": client.get("/health"),
+        "briefing": client.get("/briefing", params={"city": "Campinas"}),
     }
     for name, response in samples.items():
         assert response.status_code == 200, (name, response.text)

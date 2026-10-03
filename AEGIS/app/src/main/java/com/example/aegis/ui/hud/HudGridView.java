@@ -10,6 +10,11 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.ColorUtils;
+
+import com.example.aegis.R;
+
 /** Fundo com grade holográfica e uma linha de varredura descendo. */
 public class HudGridView extends View {
 
@@ -17,6 +22,7 @@ public class HudGridView extends View {
     private final Paint scan = new Paint();
     private final float step;
     private final float band;
+    private final int accent;
     private float scanY;
     private ValueAnimator animator;
 
@@ -28,14 +34,16 @@ public class HudGridView extends View {
         super(context, attrs);
         step = Hud.dp(context, 28);
         band = Hud.dp(context, 90);
-        line.setColor(0x1400E5FF);
+        accent = ContextCompat.getColor(context, R.color.aegis_cyan);
+        line.setColor(ColorUtils.setAlphaComponent(accent, 0x14));
         line.setStrokeWidth(Hud.dp(context, 1));
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         scan.setShader(new LinearGradient(0, 0, 0, band,
-                new int[]{0x0000E5FF, 0x2600E5FF, 0x0000E5FF}, null, Shader.TileMode.CLAMP));
+                new int[]{ColorUtils.setAlphaComponent(accent, 0x00), ColorUtils.setAlphaComponent(accent, 0x26),
+                        ColorUtils.setAlphaComponent(accent, 0x00)}, null, Shader.TileMode.CLAMP));
     }
 
     @Override

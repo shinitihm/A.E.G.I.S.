@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.example.aegis.data.ApiClient;
 import com.example.aegis.data.model.Armor;
+import com.example.aegis.data.model.Briefing;
 import com.example.aegis.data.model.ChatResponse;
 import com.example.aegis.data.model.CompareResult;
 import com.example.aegis.data.model.Health;
@@ -101,5 +102,19 @@ public class ContractTest {
         Health h = read("health", Health.class);
         assertEquals("ONLINE", h.status);
         assertEquals("OFFLINE", h.jarvis);
+    }
+
+    @Test
+    public void briefing() throws IOException {
+        Briefing b = read("briefing", Briefing.class);
+        assertEquals("Campinas, São Paulo", b.city);
+        assertEquals(27.4, b.weather.temperatureC, 0.001); // temperature_c -> temperatureC
+        assertEquals(3, b.weather.lastRain.daysAgo);       // days_ago -> daysAgo
+        assertEquals(30, b.weather.windowDays);
+        assertNull(b.weatherError);
+        assertEquals(2, b.news.size());
+        assertEquals("Primeira manchete", b.news.get(0).title);
+        assertEquals("G1", b.news.get(0).source);
+        assertNull(b.newsError);
     }
 }

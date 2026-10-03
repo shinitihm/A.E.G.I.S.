@@ -21,6 +21,8 @@ public class LocalStore {
     private static final String THREATS = "threats";
     private static final String CHAT = "chat";
     private static final String VOICE = "voice_enabled";
+    private static final String CITY = "city";
+    private static final String DOOM = "doom_mode";
     private static final int CHAT_LIMIT = 60;
 
     private final SharedPreferences prefs;
@@ -94,6 +96,28 @@ public class LocalStore {
 
     public void setVoiceEnabled(boolean enabled) {
         prefs.edit().putBoolean(VOICE, enabled).apply();
+    }
+
+    // ── cidade do briefing ──
+
+    /** Cidade digitada no briefing; vazia se o usuário nunca informou. */
+    public String city() {
+        return prefs.getString(CITY, "");
+    }
+
+    public void setCity(String city) {
+        prefs.edit().putString(CITY, city).apply();
+    }
+
+    // ── tema ──
+
+    /** true = tema Dr. Doom. O padrão é o Stark. */
+    public boolean doomMode() {
+        return prefs.getBoolean(DOOM, false);
+    }
+
+    public void setDoomMode(boolean doom) {
+        prefs.edit().putBoolean(DOOM, doom).apply();
     }
 
     // ── helpers ──

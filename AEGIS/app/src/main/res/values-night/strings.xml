@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Textos do tema Dr. Doom. Só sobrescreve o que muda; o resto vem de values/strings.xml. -->
+<resources>
+    <string name="auth_subtitle">Acesso restrito — Latvéria</string>
+    <string name="auth_success">IDENTIDADE CONFIRMADA\nBEM-VINDO, MAJESTADE</string>
+    <string name="auth_prompt_subtitle">Confirme sua identidade, Majestade</string>
+    <string name="jarvis_welcome">Sistemas sob o seu comando, Majestade. Em que posso servir?</string>
+    <string name="jarvis_offline_error">Perdi a conexão com o servidor, Majestade. Verifique se o backend está rodando.</string>
+    <string name="house_party_done">TODAS AS ARMADURAS ONLINE, MAJESTADE.</string>
+    <string name="briefing_ask">Às ordens, Majestade. Deseja o briefing de hoje: o tempo na sua cidade, a última chuva e as duas manchetes principais?</string>
+</resources>

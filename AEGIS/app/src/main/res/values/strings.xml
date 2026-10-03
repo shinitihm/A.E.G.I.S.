@@ -102,6 +102,19 @@
     <string name="widget_header">A.E.G.I.S. // ALVO DO DIA</string>
     <string name="widget_loading">Escaneando…</string>
 
+    <!-- Briefing (pop-up ao abrir o app) -->
+    <string name="briefing_title">BRIEFING DO DIA</string>
+    <string name="briefing_ask">Às ordens, senhor. Deseja o briefing de hoje: o tempo na sua cidade, a última chuva e as duas manchetes principais?</string>
+    <string name="briefing_city_label">SUA CIDADE</string>
+    <string name="briefing_city_hint">Ex.: Campinas</string>
+    <string name="briefing_yes">BRIEFING</string>
+    <string name="briefing_no">AGORA NÃO</string>
+    <string name="briefing_loading">COLETANDO DADOS…</string>
+    <string name="briefing_news_label">MANCHETES</string>
+    <string name="briefing_no_news">Sem manchetes no momento.</string>
+    <string name="briefing_weather_unavailable">Clima indisponível no momento.</string>
+    <string name="briefing_change_city">TROCAR CIDADE</string>
+    <string name="briefing_close">FECHAR</string>
     <string name="back">Voltar</string>
     <string name="server_offline">SEM CONEXÃO COM O SERVIDOR A.E.G.I.S.</string>
 </resources>

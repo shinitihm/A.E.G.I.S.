@@ -15,6 +15,7 @@ import com.example.aegis.data.ApiCallback;
 import com.example.aegis.data.ApiClient;
 import com.example.aegis.data.model.Health;
 import com.example.aegis.ui.arsenal.ArsenalFragment;
+import com.example.aegis.ui.briefing.BriefingDialogFragment;
 import com.example.aegis.ui.heroes.HeroDetailActivity;
 import com.example.aegis.ui.heroes.HeroesFragment;
 import com.example.aegis.ui.hud.Hud;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             add(tx, new MissionsFragment(), 4);
             tx.commit();
             fm.executePendingTransactions();
+            new BriefingDialogFragment().show(fm, BriefingDialogFragment.TAG); // só na abertura a frio
         }
         nav.setOnItemSelectedListener(item -> {
             select(item.getItemId());

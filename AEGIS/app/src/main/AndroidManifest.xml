@@ -19,6 +19,7 @@
     <!-- usesCleartextTraffic: o backend FastAPI de desenvolvimento roda em http:// na rede local.
          Em produção, use https:// e remova isto. -->
     <application
+        android:name=".AegisApp"
         android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

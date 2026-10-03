@@ -15,6 +15,20 @@
     <color name="aegis_text">#FFE0F7FA</color>
     <color name="aegis_text_dim">#FF7FA3B0</color>
 
+    <!-- Variações usadas pelos drawables (antes eram hex soltos) -->
+    <color name="aegis_cyan_soft">#1A00E5FF</color>
+    <color name="aegis_cyan_mid">#6600E5FF</color>
+    <color name="aegis_cyan_light">#FFB2FFFF</color>
+    <color name="aegis_gold_faint">#26FFB300</color>
+    <color name="aegis_gold_mid">#80FFB300</color>
+    <color name="aegis_bg_clear">#0005070D</color>
+    <color name="aegis_bg_half">#4005070D</color>
+
+    <!-- Widget da tela inicial: o sistema o desenha fora do app, então NÃO segue o tema (não existe em values-night). -->
+    <color name="widget_gold">#FFFFB300</color>
+    <color name="widget_text">#FFE0F7FA</color>
+    <color name="widget_cyan">#FF00E5FF</color>
+
     <!-- Níveis de ameaça -->
     <color name="threat_low">#FF00E5FF</color>
     <color name="threat_moderate">#FFFFD600</color>

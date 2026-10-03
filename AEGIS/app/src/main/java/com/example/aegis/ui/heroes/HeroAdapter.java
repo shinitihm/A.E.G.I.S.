@@ -80,7 +80,7 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.Holder> {
             h.threat.setText(threat.level + " · " + threat.score);
             h.threat.setTextColor(color);
         } else {
-            h.meter.setThreat(0, 0xFF00E5FF, false);
+            h.meter.setThreat(0, h.itemView.getContext().getColor(R.color.aegis_cyan), false);
             h.threat.setText(R.string.not_scanned);
             h.threat.setTextColor(h.itemView.getContext().getColor(R.color.aegis_text_dim));
         }
