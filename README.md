@@ -54,7 +54,7 @@ app/src/main/java/com/example/aegis/
 | **Missões** | aba MISSÕES (story arcs) |
 | **Voz** | 🔊 liga/desliga a resposta falada (TextToSpeech); 🎤 fala a pergunta (reconhecimento de voz do Google) |
 | **Widget** | segure na tela inicial → Widgets → A.E.G.I.S. (toque abre o app pela splash, então a biometria continua obrigatória) |
-| **Easter eggs** | no chat: `I am Iron Man`, `Veronica`, `Clean Slate`, `3000`, `sexta-feira`… |
+| **Easter eggs** | no chat: `I am Iron Man`, `Veronica`, `Clean Slate`, `3000`, `sexta-feira`, `snap` (metade dos alvos vira pó), `Ultron` (glitch)… |
 
 ## Testes
 
@@ -148,7 +148,7 @@ Os pesos são fáceis de ajustar no arquivo. Teste com Thanos, Hulk, Wolverine e
 
 Ordem de decisão em `POST /jarvis/chat`:
 
-1. **Easter eggs** (sempre, mesmo com IA): `I am Iron Man`, `House Party`, `Clean Slate`, `Veronica`, `3000`…
+1. **Easter eggs** (sempre, mesmo com IA): `I am Iron Man`, `House Party`, `Clean Slate`, `Veronica`, `3000`, `snap`, `Ultron`…
 2. **Modo IA** (se `GEMINI_API_KEY` existir): Gemini com 3 ferramentas — `buscar_heroi`, `listar_armaduras`, `consultar_armadura` — então responde com dados reais. Se a chamada falhar, cai no passo 3.
 3. **Modo OFFLINE**: regras por palavra-chave (`quem é o Thanos`, `mark 44`, `hulk vs thor`, `status do arsenal`…).
 
