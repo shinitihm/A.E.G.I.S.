@@ -83,7 +83,7 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     reply: str
-    action: str | None = None  # HOUSE_PARTY, IRON_MAN, CLEAN_SLATE, DOOM_MODE, STARK_MODE, OPEN_ARMOR:44, OPEN_HERO:1455
+    action: str | None = None  # HOUSE_PARTY, IRON_MAN, CLEAN_SLATE, SNAP, ULTRON, DOOM_MODE, STARK_MODE, OPEN_ARMOR:44, OPEN_HERO:1455
     mode: Literal["IA", "OFFLINE"]
 
 
