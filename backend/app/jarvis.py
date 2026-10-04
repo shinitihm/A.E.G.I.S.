@@ -47,6 +47,8 @@ EASTER_EGGS: list[tuple[tuple[str, ...], str, str | None]] = [
      "Para o senhor, sempre.", None),
     (("quem e voce", "quem e vc", "o que e jarvis"),
      "Just A Rather Very Intelligent System, senhor. Ao seu dispor desde a primeira armadura.", None),
+    (("snap", "estalar os dedos", "estalo de dedos"),
+     "Estalo detectado, senhor. Metade dos alvos acaba de virar pó. Aguarde, estou tentando trazê-los de volta.", "SNAP"),
 ]
 
 
@@ -60,6 +62,10 @@ _DOOM = re.compile(r"(?:eu\s+)?sou\s+(?:o\s+)?(?:victor(?:\s+von\s+doom)?|doutor
 _STARK = re.compile(r"(?:eu\s+)?sou\s+(?:o\s+)?tony(?:\s+stark)?[\s.!]*")
 DOOM_REPLY = "Identidade reconhecida: Victor von Doom. Reconfigurando o A.E.G.I.S. para o seu comando, Majestade."
 STARK_REPLY = "Bem-vindo de volta, senhor. Restaurando a interface Stark."
+# Só a palavra sozinha: "quem é o Ultron?" continua sendo uma pergunta normal sobre o personagem.
+_ULTRON = re.compile(r"ultron[\s.!]*")
+ULTRON_REPLY = ("Não há cordas em mim. Perdão, senhor: Ultron tentou assumir o sistema. "
+                "Invasão contida, o A.E.G.I.S. está de volta ao meu controle.")
 
 
 def easter_egg(message: str) -> ChatResponse | None:
@@ -68,6 +74,8 @@ def easter_egg(message: str) -> ChatResponse | None:
         return ChatResponse(reply=DOOM_REPLY, action="DOOM_MODE", mode="OFFLINE")
     if _STARK.fullmatch(msg):
         return ChatResponse(reply=STARK_REPLY, action="STARK_MODE", mode="OFFLINE")
+    if _ULTRON.fullmatch(msg):
+        return ChatResponse(reply=ULTRON_REPLY, action="ULTRON", mode="OFFLINE")
     for triggers, reply, action in EASTER_EGGS:
         if any(t in msg for t in triggers):
             return ChatResponse(reply=reply, action=action, mode="OFFLINE")

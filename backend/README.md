@@ -78,7 +78,7 @@ Os pesos são fáceis de ajustar no arquivo. Teste com Thanos, Hulk, Wolverine e
 
 Ordem de decisão em `POST /jarvis/chat`:
 
-1. **Easter eggs** (sempre, mesmo com IA): `I am Iron Man`, `House Party`, `Clean Slate`, `Veronica`, `3000`… e a troca de tema: `Sou Victor.` (modo Dr. Doom) e `Sou Tony Stark.` (volta ao normal).
+1. **Easter eggs** (sempre, mesmo com IA): `I am Iron Man`, `House Party`, `Clean Slate`, `Veronica`, `3000`, `snap`, `Ultron`… e a troca de tema: `Sou Victor.` (modo Dr. Doom) e `Sou Tony Stark.` (volta ao normal).
 2. **Modo IA** (se `GEMINI_API_KEY` existir): Gemini com 3 ferramentas — `buscar_heroi`, `listar_armaduras`, `consultar_armadura` — então responde com dados reais. Se a chamada falhar, cai no passo 3.
 3. **Modo OFFLINE**: regras por palavra-chave (`quem é o Thanos`, `mark 44`, `hulk vs thor`, `status do arsenal`…).
 

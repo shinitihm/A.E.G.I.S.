@@ -40,3 +40,10 @@ def test_similar_phrases_do_not_switch_theme(message):
 def test_existing_easter_eggs_still_work():
     assert jarvis.easter_egg("I am Iron Man").action == "IRON_MAN"
     assert jarvis.easter_egg("house party").action == "HOUSE_PARTY"
+
+
+def test_snap_and_ultron():
+    assert jarvis.easter_egg("Snap!").action == "SNAP"
+    assert jarvis.easter_egg("vou estalar os dedos").action == "SNAP"
+    assert jarvis.easter_egg("  ULTRON. ").action == "ULTRON"
+    assert jarvis.easter_egg("quem é o Ultron?") is None  # pergunta sobre o personagem não vira easter egg

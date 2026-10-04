@@ -55,7 +55,7 @@ app/src/main/java/com/example/aegis/
 | **Missões** | aba MISSÕES (story arcs) |
 | **Voz** | 🔊 liga/desliga a resposta falada (TextToSpeech); 🎤 fala a pergunta (reconhecimento de voz do Google) |
 | **Widget** | segure na tela inicial → Widgets → A.E.G.I.S. (toque abre o app pela splash, então a biometria continua obrigatória) |
-| **Easter eggs** | no chat: `I am Iron Man`, `Veronica`, `Clean Slate`, `3000`, `sexta-feira`… |
+| **Easter eggs** | no chat: `I am Iron Man`, `Veronica`, `Clean Slate`, `3000`, `sexta-feira`, `snap` (metade dos alvos vira pó), `Ultron` (glitch)… |
 | **Briefing** | pop-up ao abrir o app (clima, última chuva e 2 manchetes): `BriefingDialogFragment` → `GET /briefing` |
 | **Modo Dr. Doom** | diga `Sou Victor.` à J.A.R.V.I.S. (volta com `Sou Tony Stark.`): backend `jarvis.py` (`DOOM_MODE`); app `ThemeMode`, `AegisApp`, `res/values-night/` |
 
