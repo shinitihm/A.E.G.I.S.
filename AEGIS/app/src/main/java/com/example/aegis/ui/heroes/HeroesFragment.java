@@ -1,6 +1,7 @@
 package com.example.aegis.ui.heroes;
 
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,11 +24,13 @@ import com.example.aegis.data.model.HeroDetail;
 import com.example.aegis.data.model.HeroPage;
 import com.example.aegis.data.model.HeroSummary;
 import com.example.aegis.data.model.Threat;
+import com.example.aegis.ui.hud.DustView;
 import com.example.aegis.ui.hud.Hud;
 import com.example.aegis.ui.hud.StateView;
 import com.google.android.material.chip.ChipGroup;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -85,26 +88,29 @@ public class HeroesFragment extends Fragment {
         if (adapter != null) applyFilter(); // pode ter escaneado ou monitorado alguém na ficha
     }
 
-    /** Easter egg "snap": metade dos cards visíveis vira pó e volta sozinha alguns segundos depois. */
+    /** Easter egg "snap": metade dos cards visíveis, sorteada, vira pó (com o nome de quem sumiu) e depois volta. */
     public void snap() {
         if (list == null) return;
-        list.post(() -> { // post: a aba pode ter acabado de ser mostrada e ainda não ter os cards na tela
-            list.suppressLayout(true); // sem rolagem nem reciclagem enquanto há cards invisíveis
-            for (int i = 0; i < list.getChildCount(); i += 2) {
+        // espera a aba aparecer: logo depois da troca de aba os cards ainda não estão na tela
+        list.postDelayed(() -> {
+            if (!isAdded()) return;
+            List<View> visible = new ArrayList<>();
+            Rect seen = new Rect();
+            for (int i = 0; i < list.getChildCount(); i++) {
                 View card = list.getChildAt(i);
-                card.animate().alpha(0f).scaleX(0.7f).scaleY(0.7f)
-                        .translationX(card.getWidth() * 0.35f).translationY(-card.getHeight() * 0.4f)
-                        .setStartDelay(i * 70L).setDuration(900)
-                        .withEndAction(() -> card.animate().alpha(1f).scaleX(1f).scaleY(1f)
-                                .translationX(0f).translationY(0f)
-                                .setStartDelay(2500).setDuration(600)
-                                // o atraso fica guardado na view: zera para não atrasar as animações da lista
-                                .withEndAction(() -> card.animate().setStartDelay(0))
-                                .start())
-                        .start();
+                // só cards inteiros na tela: um card cortado pela borda da lista soltaria pó fora dela
+                if (card.getGlobalVisibleRect(seen) && seen.height() == card.getHeight()) visible.add(card);
             }
-            list.postDelayed(() -> list.suppressLayout(false), 5500);
-        });
+            if (visible.isEmpty()) return;
+            Collections.shuffle(visible);
+            List<View> cards = visible.subList(0, (visible.size() + 1) / 2);
+            cards.sort((a, b) -> Integer.compare(a.getTop(), b.getTop())); // some de cima para baixo
+            List<String> names = new ArrayList<>();
+            for (View card : cards) names.add(((TextView) card.findViewById(R.id.name)).getText().toString());
+
+            list.suppressLayout(true); // sem reciclagem de cards enquanto o efeito mexe neles
+            DustView.snap(requireActivity(), cards, names, () -> list.suppressLayout(false));
+        }, 200);
     }
 
     private void loadNext() {
