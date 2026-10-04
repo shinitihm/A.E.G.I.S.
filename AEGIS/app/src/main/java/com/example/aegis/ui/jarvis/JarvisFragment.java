@@ -39,6 +39,7 @@ import com.example.aegis.ui.arsenal.ArmorDetailActivity;
 import com.example.aegis.ui.heroes.CompareActivity;
 import com.example.aegis.ui.heroes.HeroDetailActivity;
 import com.example.aegis.ui.heroes.HeroesFragment;
+import com.example.aegis.ui.hud.GlitchView;
 import com.example.aegis.ui.hud.Hud;
 import com.example.aegis.ui.hud.Speaker;
 import com.example.aegis.ui.hud.WaveView;
@@ -259,16 +260,23 @@ public class JarvisFragment extends Fragment {
         }
     }
 
-    /** Easter egg "Ultron": a tela treme em vermelho (invasão) e depois pisca em ciano (J.A.R.V.I.S. retoma). */
+    /**
+     * Easter egg "Ultron": interferência na tela inteira e tela tremendo (invasão); quando o glitch acaba,
+     * um clarão na cor do tema marca a J.A.R.V.I.S. retomando o controle.
+     */
     private void glitch(MainActivity main) {
         View content = main.findViewById(android.R.id.content);
-        Hud.flash(main.flashOverlay(), 0x99FF1744);
-        Hud.vibrate(main, 600);
+        GlitchView.show(main);
+        Hud.vibrate(main, 900);
         ObjectAnimator shake = ObjectAnimator.ofFloat(content, View.TRANSLATION_X, 0, -28, 22, -16, 30, -10, 14, 0);
         shake.setDuration(400);
-        shake.setRepeatCount(2);
+        shake.setRepeatCount(5);
         shake.start();
-        content.postDelayed(() -> Hud.flash(main.flashOverlay(), 0x6600E5FF), 1400);
+        int retake = (main.getColor(R.color.aegis_cyan) & 0x00FFFFFF) | 0x66000000; // cor do tema, translúcida
+        content.postDelayed(() -> {
+            Hud.flash(main.flashOverlay(), retake);
+            Hud.vibrate(main, 150);
+        }, GlitchView.DURATION);
     }
 
     /**
